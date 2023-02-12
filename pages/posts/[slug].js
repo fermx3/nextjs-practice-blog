@@ -1,5 +1,5 @@
-import PostContent from "../../components/posts/post-detail/post-content";
-import { getAllPosts, getPostData, getPostsFiles } from "../../lib/posts-util";
+import PostContent from '../../components/posts/post-detail/post-content';
+import { getPostData, getPostsFiles } from '../../lib/posts-util';
 
 const PostDetailPage = ({ postData }) => {
   return <PostContent postDetails={postData} />;
@@ -22,7 +22,7 @@ export function getStaticProps(context) {
 
 export function getStaticPaths() {
   const postsFileNames = getPostsFiles();
-  const slugs = postsFileNames.map((fileName) => fileName.replace(/\.md$/, ""));
+  const slugs = postsFileNames.map((fileName) => fileName.replace(/\.md$/, ''));
 
   return {
     paths: slugs.map((slug) => ({ params: { slug: slug } })),

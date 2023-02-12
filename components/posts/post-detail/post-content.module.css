@@ -15,12 +15,24 @@
 
 .content .image {
   margin: var(--size-4) auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  position: relative;
   width: 100%;
-  max-width: 600px;
+  height: 28vh;
 }
 
 @media (min-width: 768px) {
   .content {
     padding: var(--size-8);
+  }
+
+  .content .image {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-auto-rows: 22rem;
+    position: relative;
+    width: 100%;
+    height: 20rem;
   }
 }

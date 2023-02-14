@@ -1,16 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import classes from "./post-item.module.css";
+import classes from './post-item.module.css';
 
 const PostItem = ({ post }) => {
   const { title, image, date, excerpt, slug } = post;
 
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
   });
 
   const imagePath = `/images/posts/${slug}/${image}`;
@@ -25,7 +25,11 @@ const PostItem = ({ post }) => {
             alt={title}
             width={300}
             height={200}
-            layout="responsive"
+            sizes='100vw'
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
           />
         </div>
         <div className={classes.content}>

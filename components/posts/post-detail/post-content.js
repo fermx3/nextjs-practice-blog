@@ -33,8 +33,11 @@ function PostContent({ postDetails }) {
               src={`/images/posts/${postDetails.slug}/${image.properties.src}`}
               alt={image.properties.alt}
               fill
-              style={{ objectFit: 'contain', objectPosition: 'left' }}
               priority
+              style={{
+                objectFit: 'contain',
+                objectPosition: 'left',
+              }}
             />
           </div>
         );

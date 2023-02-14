@@ -1,4 +1,3 @@
-import { MongoClient } from 'mongodb';
 import { connectDatabase, insertDocument } from '../../helpers/db-utils';
 
 const handler = async (req, res) => {

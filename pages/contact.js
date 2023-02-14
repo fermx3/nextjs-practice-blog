@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Head from 'next/head';
 import NotificationContext from '../store/notification-context';
 
 import Notification from '../components/ui/notification';
@@ -12,6 +13,10 @@ const ContactPage = () => {
 
   return (
     <FormSection>
+      <Head>
+        <title>Contact Me | Fer's NextJS Blog</title>
+        <meta name='description' content='Send me your messages.' />
+      </Head>
       <h1>How can I help you?</h1>
       <ContactForm />
       {activeNotification && (

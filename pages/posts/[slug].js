@@ -1,8 +1,19 @@
+import { Fragment } from 'react';
+import Head from 'next/head';
+
 import PostContent from '../../components/posts/post-detail/post-content';
 import { getPostData, getPostsFiles } from '../../lib/posts-util';
 
 const PostDetailPage = ({ postData }) => {
-  return <PostContent postDetails={postData} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>{`${postData.title} | Fer's NextJS Blog`}</title>
+        <meta name='description' content={postData.excerpt} />
+      </Head>
+      <PostContent postDetails={postData} />
+    </Fragment>
+  );
 };
 
 export default PostDetailPage;
